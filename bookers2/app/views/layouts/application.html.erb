@@ -10,19 +10,59 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to "新規登録", new_user_registration_path %>
-      </li>
-      <li>
-        <%= link_to "ログイン", new_user_session_path %>
-      </li>
-    <% end %>
-    <%= yield %>
+    <header>
+      <nav class="navbar-expand-lg navbar-dark bg-dark">
+        <div class="countainer">
+            <%= link_to 'Bookers' , "/books" %>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
+              <li>
+                <%= link_to "Home",  root_path %>
+              </li>
+              <li>
+                <%= link_to "Users", root_path %>
+              </li>
+              <li>
+                <%= link_to "Books", root_path %>
+              </li>
+              <li>
+                <%= link_to "logout", destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Home", root_path %>
+              </li>
+              <li>
+                <%= link_to "About", root_path %>
+              </li>
+              <li>
+                <%= link_to "sign up", root_path %>
+              </li>
+              <li>
+                <%= link_to "login", new_user_session_path %>
+              </li>
+            <% end %>
+          </div>
+        </div>
+      </nav>
+    </header>
 
+    <main>
+    <%= yield %>
+    </main>
+
+    <footer>
+      <div class="container mt-5">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

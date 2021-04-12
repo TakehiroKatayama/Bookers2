@@ -29,7 +29,7 @@
                 <%= link_to "Users", root_path %>
               </li>
               <li>
-                <%= link_to "Books", root_path %>
+                <%= link_to "Books", books_path %>
               </li>
               <li>
                 <%= link_to "logout", destroy_user_session_path, method: :delete %>
@@ -42,7 +42,7 @@
                 <%= link_to "About", homes_about_path %>
               </li>
               <li>
-                <%= link_to "sign up", root_path %>
+                <%= link_to "sign up", new_user_registration_path %>
               </li>
               <li>
                 <%= link_to "login", new_user_session_path %>

@@ -16,14 +16,14 @@
             <a class="navbar-brand" href="/">
               <span>Bookers</span>
             </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <div class="navbar-collapse collapse" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-              <li>
-                <%= link_to "Home",  root_path %>
+              <li class="nav-link text-light" >
+                <i class="fas fa-hoom"></i><%= link_to "Home", root_path %>
               </li>
               <li>
                 <%= link_to "Users", root_path %>
@@ -66,5 +66,6 @@
         </div>
       </div>
     </footer>
+    
   </body>
 </html>

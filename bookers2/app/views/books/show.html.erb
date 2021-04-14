@@ -12,7 +12,7 @@
                   <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
                   <br><%= @user.name %>
                   <% end %></th>
-                <td><%= link_to user_path(@book.id) do %>
+                <td><%= link_to book_path(@book.id) do %>
                   <%= @book.title %>
                   <% end %>
                   </td>
